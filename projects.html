@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leo's Projects</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+        }
+        .background {
+            background-image: url('backgroundpic.png'); /* Ensure this points to your background image */
+            background-size: cover;
+            background-position: center;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        .content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            color: white;
+            width: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        nav {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 1.2em;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .projects-container {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 800px;
+            margin: auto;
+            color: black;
+            text-align: left;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+            overflow-y: auto;
+            max-height: 80vh;
+        }
+        .projects-container h1, .projects-container h2 {
+            color: #333;
+        }
+        .projects-container p {
+            margin: 10px 0;
+        }
+        .projects-container ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+        .projects-container ul li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="background">
+        <div class="overlay"></div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="projects.html">Projects</a>
+            <a href="resume.html">Resume</a>
+            <a href="blog.html">Blog</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        <div class="content">
+            <div class="projects-container">
+                <h1>Leo's Projects</h1>
+                <h2>Project 1: Cloud Migration for E-commerce Platform</h2>
+                <p>Led the migration of a large e-commerce platform to a multi-cloud environment, improving scalability and reducing costs by 40%.</p>
+                <ul>
+                    <li>Designed the architecture using AWS and Azure for high availability.</li>
+                    <li>Implemented CI/CD pipelines using Jenkins and Terraform.</li>
+                    <li>Conducted workshops to train the client's IT team on best practices.</li>
+                </ul>
+                <h2>Project 2: Serverless Microservices for Fintech Startup</h2>
+                <p>Developed a serverless microservices architecture for a fintech startup, enabling rapid scaling and reducing operational costs.</p>
+                <ul>
+                    <li>Used AWS Lambda and API Gateway for scalable backend services.</li>
+                    <li>Implemented DynamoDB for a highly available database solution.</li>
+                    <li>Ensured compliance with industry security standards.</li>
+                </ul>
+                <h2>Project 3: DevSecOps Pipeline for Healthcare Company</h2>
+                <p>Built a secure DevSecOps pipeline for a healthcare company to automate deployments and ensure compliance with regulatory standards.</p>
+                <ul>
+                    <li>Integrated security tools into the CI/CD pipeline.</li>
+                    <li>Automated vulnerability scanning and reporting.</li>
+                    <li>Trained the development team on secure coding practices.</li>
+                </ul>
+                <h2>Project 4: Kubernetes Cluster for IoT Solution</h2>
+                <p>Designed and deployed a Kubernetes cluster for an IoT solution, providing a scalable and reliable platform for managing IoT devices.</p>
+                <ul>
+                    <li>Set up a Kubernetes cluster on Google Cloud Platform.</li>
+                    <li>Implemented Helm for managing Kubernetes applications.</li>
+                    <li>Optimized the cluster for performance and cost efficiency.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

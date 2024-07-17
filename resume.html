@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leo's Resume</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+        }
+        .background {
+            background-image: url('backgroundpic.png'); /* Ensure this points to your background image */
+            background-size: cover;
+            background-position: center;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        .content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            color: white;
+            width: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        nav {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 1.2em;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .resume-container {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 800px;
+            margin: auto;
+            color: black;
+            text-align: left;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+            overflow-y: auto;
+            max-height: 80vh;
+        }
+        .resume-container h1, .resume-container h2 {
+            color: #333;
+        }
+        .resume-container p {
+            margin: 10px 0;
+        }
+        .resume-container ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+        .resume-container ul li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="background">
+        <div class="overlay"></div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="projects.html">Projects</a>
+            <a href="resume.html">Resume</a>
+            <a href="blog.html">Blog</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        <div class="content">
+            <div class="resume-container">
+                <h1>Leo Cloud - Resume</h1>
+                <h2>Summary</h2>
+                <p>Senior Cloud Engineer and Architect with over 10 years of experience in designing, implementing, and managing complex cloud infrastructures. Expertise in multi-cloud environments, DevSecOps practices, and serverless architectures.</p>
+                <h2>Experience</h2>
+                <p><strong>Senior Cloud Architect</strong><br>TechNova Solutions<br>2019 - Present</p>
+                <ul>
+                    <li>Led cloud migration projects for Fortune 500 companies, resulting in 40% cost reduction and improved scalability.</li>
+                    <li>Designed and implemented multi-cloud strategies using AWS, Azure, and GCP for high-availability systems.</li>
+                    <li>Mentored junior engineers and conducted workshops on cloud best practices and emerging technologies.</li>
+                </ul>
+                <p><strong>Cloud Infrastructure Engineer</strong><br>CloudSphere Inc.<br>2015 - 2019</p>
+                <ul>
+                    <li>Developed and maintained CI/CD pipelines using Jenkins, GitLab, and Terraform for automated deployments.</li>
+                    <li>Implemented containerization strategies using Docker and Kubernetes for microservices architectures.</li>
+                    <li>Optimized cloud costs by 30% through resource optimization and implementation of serverless technologies.</li>
+                </ul>
+                <p><strong>Systems Administrator</strong><br>DataCom Systems<br>2012 - 2015</p>
+                <ul>
+                    <li>Managed on-premises data centers and initiated early cloud adoption strategies.</li>
+                    <li>Implemented disaster recovery and business continuity plans, reducing downtime by 75%.</li>
+                    <li>Automated routine tasks using Python and Bash scripting, improving team efficiency by 40%.</li>
+                </ul>
+                <h2>Skills</h2>
+                <p>AWS, Azure, Google Cloud Platform, Kubernetes, Docker, Terraform, Jenkins, GitLab CI/CD, Python, Bash, Node.js, Serverless Architecture, Microservices, DevSecOps, Cloud Security, Performance Optimization</p>
+                <h2>Education</h2>
+                <p><strong>Master of Science in Computer Science</strong><br>Cloud Computing Specialization<br>Stanford University, 2012</p>
+                <p><strong>Bachelor of Science in Information Technology</strong><br>University of California, Berkeley, 2008</p>
+                <h2>Certifications</h2>
+                <p>AWS Certified Solutions Architect - Professional<br>Google Cloud Certified - Professional Cloud Architect<br>Microsoft Certified: Azure Solutions Architect Expert<br>Certified Kubernetes Administrator (CKA)<br>Certified Information Systems Security Professional (CISSP)</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

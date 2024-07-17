@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leo's Home</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+        }
+        .background {
+            background-image: url('backgroundpic.png'); /* Ensure this points to your background image */
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            flex-direction: column;
+        }
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        .content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            color: white;
+        }
+        .typing-text {
+            font-size: 3em;
+            font-weight: bold;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 3px solid white;
+            animation: typing 4s steps(40, end), blink-caret 0.75s step-end infinite;
+        }
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: white }
+        }
+        nav {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 1.2em;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .visitor-count {
+            position: absolute;
+            bottom: 20px;
+            font-size: 1.5em;
+            width: 100%;
+            text-align: center;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="background">
+        <div class="overlay"></div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="projects.html">Projects</a>
+            <a href="resume.html">Resume</a>
+            <a href="blog.html">Blog</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        <div class="content">
+            <div class="typing-text" id="typed"></div>
+        </div>
+        <div class="visitor-count" id="visitorCount">Visitor Count: Loading...</div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function (event) {
+            new Typed("#typed", {
+                strings: ["Hi, My Name is Leo and Welcome to my page."],
+                typeSpeed: 50,
+                backSpeed: 50,
+                startDelay: 1000,
+                backDelay: 2000,
+                loop: true,
+                showCursor: false
+            });
+            getVisitorCount();
+        });
+
+        async function getVisitorCount() {
+            const apiUrl = 'https://fnzyy4ok16.execute-api.us-west-1.amazonaws.com/Prod/visitorcount';
+            try {
+                const response = await fetch(apiUrl);
+                const data = await response.json();
+                document.getElementById('visitorCount').innerText = `Visitor Count: ${data.count}`;
+            } catch (error) {
+                console.error('Error fetching visitor count:', error);
+            }
+        }
+    </script>
+</body>
+</html>

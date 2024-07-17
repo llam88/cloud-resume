@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leo's Blog</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+        }
+        .background {
+            background-image: url('backgroundpic.png'); /* Ensure this points to your background image */
+            background-size: cover;
+            background-position: center;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        .content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            color: white;
+            width: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        nav {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 1.2em;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .blog-container {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 800px;
+            margin: auto;
+            color: black;
+            text-align: left;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+            overflow-y: auto;
+            max-height: 80vh;
+        }
+        .blog-container h1, .blog-container h2 {
+            color: #333;
+        }
+        .blog-container p {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="background">
+        <div class="overlay"></div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="projects.html">Projects</a>
+            <a href="resume.html">Resume</a>
+            <a href="blog.html">Blog</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        <div class="content">
+            <div class="blog-container">
+                <h1>Leo's Blog</h1>
+                <h2>Blog 1: Overcoming Challenges with Infrastructure as Code</h2>
+                <p>
+                    Working on this project has been a significant learning experience. Leveraging Infrastructure as Code (IaC) with AWS CloudFormation was a major step forward in automating our deployments. However, it came with its own set of challenges. Writing complex CloudFormation templates required a deep understanding of AWS services and their interdependencies. Debugging stack failures often felt like finding a needle in a haystack. Yet, with persistence and the right resources, I managed to streamline the deployment process, ultimately enhancing the scalability and reliability of our infrastructure.
+                </p>
+                <h2>Blog 2: From Sales to Cloud: My Certification Journey</h2>
+                <p>
+                    Transitioning from a sales background to IT has been both challenging and rewarding. Without a formal IT background, I had to start from scratch, dedicating countless hours to study. Preparing for the AWS Certified Cloud Practitioner (CCP) and Solutions Architect Associate exams required a thorough understanding of cloud concepts, services, and best practices. Despite the steep learning curve, utilizing online courses, practice exams, and study groups proved invaluable. Passing these certifications not only validated my knowledge but also boosted my confidence to tackle more complex cloud projects.
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
