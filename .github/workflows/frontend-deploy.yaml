@@ -4,31 +4,26 @@ on:
   push:
     branches:
       - main
-  workflow_dispatch:
+  pull_request:
+    branches:
+      - main
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
-      - name: Use Node.js 20.x
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-      - name: Build frontend
-        run: |
-          npm install
-          npm run build
-
-      - name: Deploy frontend
+      - name: Deploy to S3
+        run: aws s3 sync . s3://myreusmebucket --delete
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          AWS_REGION: 'us-west-1'
-          S3_BUCKET: 'myreusmebucket'
-          CLOUDFRONT_DISTRIBUTION_ID: 'E1XAMPLE7DIS7ID'
-        run: |
-          aws s3 sync . s3://$S3_BUCKET --delete
-          aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_DISTRIBUTION_ID --paths "/*"
+
+      - name: Invalidate CloudFront Cache
+        run: aws cloudfront create-invalidation --distribution-id E3NSX57LFO5YPK --paths "/*"
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
